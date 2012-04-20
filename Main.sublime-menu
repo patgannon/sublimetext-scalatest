@@ -1,0 +1,19 @@
+[
+  {
+    "id": "tools",
+    "children":
+      [
+        {
+          "caption": "ScalaTest",
+          "children":
+            [
+              { "caption": "Run test fixture", "command": "scala_test" },
+              { "caption": "Run all scala tests", "command": "scala_test_all" },
+              { "caption": "-" },
+              { "caption": "Jump to Scala file", "command": "jump_to_scala_file" },
+              { "caption": "Switch Between Code and Test", "command": "jump_to_test" }
+            ]
+        }
+    ]
+  }
+]
