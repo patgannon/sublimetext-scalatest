@@ -77,10 +77,11 @@ class ScalaTestCommand(BaseScalaTestCommand):
 class ScalaTestAllCommand(BaseScalaTestCommand):
 	def junit_args(self):
 		matches = []
-		for root, dirnames, filenames in os.walk(self.base_dir + '/target/test-classes'):
+		for root, dirnames, filenames in os.walk(self.base_dir + '/target'):
 			for filename in fnmatch.filter(filenames, '*Test.class'):
-				matches.append(self.relative_path_to_class_name("test-classes", os.path.join(root, filename), ".class"))
+				matches.append(self.relative_path_to_class_name("classes", os.path.join(root, filename), ".class"))
 		test_classes = " ".join(matches)
+
 		return test_classes
 
 class JumpToScalaFile(sublime_plugin.TextCommand):
