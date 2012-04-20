@@ -1,0 +1,10 @@
+[
+	{ "keys": ["ctrl+shift+e"], "command": "jump_to_scala_file", 
+		"context" : [{"key": "selector", "operator": "equal", "operand": "source.scala", "match_all": true}]},
+	{ "keys": ["ctrl+shift+r"], "command": "jump_to_test", 
+		"context" : [{"key": "selector", "operator": "equal", "operand": "source.scala", "match_all": true}]},
+	{ "keys": ["ctrl+shift+x"], "command": "scala_test", 
+		"context" : [{"key": "selector", "operator": "equal", "operand": "source.scala", "match_all": true}]},
+	{ "keys": ["alt+shift+x"], "command": "scala_test_all", 
+		"context" : [{"key": "selector", "operator": "equal", "operand": "source.scala", "match_all": true}]}
+]
