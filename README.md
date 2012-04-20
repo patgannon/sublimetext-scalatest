@@ -40,20 +40,17 @@ Usage
  - Navigate to scala files in project folder (in quick panel): `Command-Shift-E`
 
 Keys:
- 'Command' (OSX) = 'Ctrl' (Linux / Windows)
-
- 'Option' (OSX) = 'Alt' (Linux / Windows)
+- 'Command' (OSX) = 'Ctrl' (Linux / Windows)
+- 'Option' (OSX) = 'Alt' (Linux / Windows)
 
 
 Note
 ----
 This plug-in assumes your project folder is organized as follows:
 
-implementation files are in src/main/scala/[namespace]/[ImplementationClassName].scala
-
-test files are in src/test/scala/[namespace]/[ImplementationClassName]Test.scala
-
-JAR files needed to run tests are either under lib/default or lib/test
+- implementation files are in src/main/scala/[namespace]/[ImplementationClassName].scala
+- test files are in src/test/scala/[namespace]/[ImplementationClassName]Test.scala
+- JAR files needed to run tests are either under lib/default or lib/test
 
 If that is not your convention, some of the features won't work.  (Use at your own risk.)  If you make modifications to accomodate your folder structure, go ahead and submit a pull request (bonus points for extensibility!)
 
