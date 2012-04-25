@@ -56,7 +56,7 @@ If that is not your convention, some of the features won't work.  (Use at your o
 
 Also note that currently this plug-in uses the JUnit test runner.
 
-work at bizo
+Work at Bizo
 ------------
 If you want to work a large systems across multiple regions on AWS or on big data problems with passionate developers [email me](mailto:gannon@bizo.com).  Also check out [Bizo's dev blog](http://dev.bizo.com)
 
