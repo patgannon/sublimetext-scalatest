@@ -4,9 +4,12 @@ Sublime Text Scala Test
 Overview
 --------
 
+This plug-in for Sublime Text 2 enables you to:
   - Run scala unit tests (all tests in suite / single fixture)
   - Switch between code and test
   - Navigate quickly to scala files within project folder
+
+This project was influenced by, and borrows some code from: https://github.com/maltize/sublime-text-2-ruby-tests
 
 Installation
 ------------
