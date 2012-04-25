@@ -55,3 +55,8 @@ This plug-in assumes your project folder is organized as follows:
 If that is not your convention, some of the features won't work.  (Use at your own risk.)  If you make modifications to accomodate your folder structure, go ahead and submit a pull request (bonus points for extensibility!)
 
 Also note that currently this plug-in uses the JUnit test runner.
+
+work at bizo
+------------
+If you want to work a large systems across multiple regions on AWS or on big data problems with passionate developers [email me](mailto:gannon@bizo.com).  Also check out [Bizo's dev blog](http://dev.bizo.com)
+
