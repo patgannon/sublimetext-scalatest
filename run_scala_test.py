@@ -29,7 +29,7 @@ class BaseScalaTestCommand(sublime_plugin.TextCommand):
 		thread.start_new_thread(self.read_stderr, ())
 
 	def relative_path_to_class_name(self, partition_folder, relative_path, suffix):
-		return relative_path.partition(partition_folder + "/")[2].replace("/", ".").replace(suffix, "")
+		return relative_path.rpartition(partition_folder + "/")[2].replace("/", ".").replace(suffix, "")
 
 	def read_stdout(self):
 		self.copy_stream_to_output_view(self.proc.stdout)
