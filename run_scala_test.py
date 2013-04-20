@@ -16,12 +16,14 @@ class BaseScalaTestCommand(sublime_plugin.TextCommand):
 	def load_config(self):
 		s = sublime.load_settings("ScalaTest.sublime-settings")
 		global SCALA; SCALA = s.get("scala_exec")
+		global useScalaTest; useScalaTest = s.get("use_scala_test") == "true"
 
 	def run(self, edit):
 		self.load_config()
 		self.show_tests_panel()
 		self.base_dir = self.view.file_name().partition("/src/")[0]
-		scala_args = "-cp target/classes:target/test-classes:`find lib/default/*.jar | tr '\012' ':'`:`find lib/test/*.jar | tr '\012' ':'` org.junit.runner.JUnitCore " + \
+		runner = "org.scalatest.tools.Runner -s " if useScalaTest else "org.junit.runner.JUnitCore "
+		scala_args = "-cp target/classes:target/test-classes:`find lib/default/*.jar | tr '\012' ':'`:`find lib/test/*.jar | tr '\012' ':'` "+ runner + \
 			self.junit_args()
 		command = wrap_in_cd(self.base_dir, SCALA + " " + scala_args)
 		self.proc = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -29,7 +31,7 @@ class BaseScalaTestCommand(sublime_plugin.TextCommand):
 		thread.start_new_thread(self.read_stderr, ())
 
 	def relative_path_to_class_name(self, partition_folder, relative_path, suffix):
-		return relative_path.partition(partition_folder + "/")[2].replace("/", ".").replace(suffix, "")
+		return relative_path.rpartition(partition_folder + "/")[2].replace("/", ".").replace(suffix, "")
 
 	def read_stdout(self):
 		self.copy_stream_to_output_view(self.proc.stdout)
